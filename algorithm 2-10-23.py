@@ -357,3 +357,4 @@ set show_work = False for just the results and not the explanation
 
 """
 get_full(cham1,cham2,timeout=10,show_work=False)
+
