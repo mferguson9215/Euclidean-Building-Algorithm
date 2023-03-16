@@ -1,0 +1,84 @@
+
+
+In [3]: runfile('C:/Users/micha/Python Code/algorithm 2-10-23.py', wdir='C:/Users/micha/Python Code')
+
+Reloaded modules: chamber_package, solutions_package
+
+The vector w_0 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = p_0*s**N
+
+x_1 = p_1*s**N
+
+x_2 = f_2_0 + p_2*s
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+The vector w_1 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s**2) + p_0 + (-f_2_0/4 - f_2_1/2)/s
+
+x_1 = -f_2_0/(2*s) + p_1
+
+x_2 = f_2_0/s**2 + f_2_1/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+The vector w_2 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s) + p_0
+
+x_1 = f_1_0/s + p_1
+
+x_2 = f_2_0/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_1_0 != 0
+
+
+
+The input chamber in this frame is:
+
+Base Point: [-1, 2, 1]
+
+Permutation (as list): [2, 0, 1]
+
+Coordinates: [[-1, 2, 1], [-1, 1, 1], [-1, 1, 0]]
+
+
+In [4]: 
+
