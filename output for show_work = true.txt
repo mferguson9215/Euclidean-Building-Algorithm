@@ -1,0 +1,769 @@
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+
+Type "copyright", "credits" or "license" for more information.
+
+
+IPython 8.7.0 -- An enhanced Interactive Python.
+
+
+In [1]: runfile('C:/Users/micha/Python Code/algorithm 2-10-23.py', wdir='C:/Users/micha/Python Code')
+
+====================================================================
+
+Finding w_0
+
+====================================================================
+
+--------------------------------------------------------------------
+
+Performing step 0 for w_0
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0, f_1, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0, f_1, f_2/s) = f_0*s**2 + 2*f_0 + f_2 + f_2/s + s*(f_0 + f_1)
+
+F_1(f_0, f_1, f_2/s) = f_1 + f_2 + s*(f_0 + f_1)
+
+F_2(f_0, f_1, f_2/s) = 4*f_0 + f_2 + 2*f_2/s + s*(f_0 + f_1)
+
+
+We are on step 0 for w_0. We therefore require that v(F_0(f_0, f_1, f_2/s)) = 0+k
+
+
+From above, the minimum possible valuation for F_0(f_0, f_1, f_2/s) is -1. Hence our initial k is -1
+
+
+Our system is thus:
+
+
+v(F_0(f_0, f_1, f_2/s)) = 0
+
+v(F_0(f_0, f_1, f_2/s)) >= 0
+
+v(F_0(f_0, f_1, f_2/s)) >= -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = -1
+
+....................................................................
+
+
+Choosing generic elements of appropriate degree, we have:
+
+
+f_0 = 0
+
+f_1 = 0
+
+f_2 = f_2_0
+
+
+Note: If any of the polynomials are set to 0, then that means they are irrelevant in determining a solution set.
+
+
+This then gives us:
+
+
+F_0(f_0, f_1, f_2) = f_2_0 + f_2_0/s
+
+F_1(f_0, f_1, f_2) = f_2_0
+
+F_2(f_0, f_1, f_2) = f_2_0 + 2*f_2_0/s
+
+
+Our reduced system is then empty.
+
+
+
+The solutions to our reduced system are given by:
+
+
+f_0 = f_0
+
+f_1 = f_1
+
+f_2_0 = f_2_0
+
+
+Substituting into F_0 for this solution gives us:
+
+
+F_0(f_0, f_1, f_2/s) = f_2_0 + f_2_0/s
+
+
+Which can have valuation -1 and thus is valid.
+
+
+Accounting for cases in which the lowest term of F_0 is zero and adjusting according to our k value, our candidate(s) are described by the following:
+
+
+The vector w_0 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = p_0*s**N
+
+x_1 = p_1*s**N
+
+x_2 = f_2_0 + p_2*s
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+
+--------------------------------------------------------------------
+
+Performing step 1 for w_0
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0/s, f_1, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0/s, f_1, f_2/s) = f_0 + f_2 + s*(f_0 + f_1) + (2*f_0 + f_2)/s
+
+F_1(f_0/s, f_1, f_2/s) = f_0 + f_1*s + f_1 + f_2
+
+F_2(f_0/s, f_1, f_2/s) = f_0 + f_1*s + f_2 + (4*f_0 + 2*f_2)/s
+
+
+We are on step 1 for w_0. We therefore require that v(F_0(f_0/s, f_1, f_2/s)) = 0+k
+
+
+From above, the minimum possible valuation for F_0(f_0/s, f_1, f_2/s) is -1. Hence our initial k is -1
+
+
+Our system is thus:
+
+
+v(F_0(f_0/s, f_1, f_2/s)) = -1
+
+v(F_0(f_0/s, f_1, f_2/s)) >= 0
+
+v(F_0(f_0/s, f_1, f_2/s)) >= -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = -1
+
+....................................................................
+
+
+k_1 is greater than or equal to the k value of -1, so we may skip this step.
+
+
+--------------------------------------------------------------------
+
+Performing step 2 for w_0
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0/s, f_1/s, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0/s, f_1/s, f_2/s) = f_0*s + f_0 + f_1 + f_2 + (2*f_0 + f_2)/s
+
+F_1(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_1/s + f_2
+
+F_2(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_2 + (4*f_0 + 2*f_2)/s
+
+
+We are on step 2 for w_0. We therefore require that v(F_0(f_0/s, f_1/s, f_2/s)) = 0+k
+
+
+From above, the minimum possible valuation for F_0(f_0/s, f_1/s, f_2/s) is -1. Hence our initial k is -1
+
+
+Our system is thus:
+
+
+v(F_0(f_0/s, f_1/s, f_2/s)) = -1
+
+v(F_0(f_0/s, f_1/s, f_2/s)) >= -1
+
+v(F_0(f_0/s, f_1/s, f_2/s)) >= -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = -1
+
+....................................................................
+
+
+k_2 is greater than or equal to the k value of -1, so we may skip this step.
+
+
+====================================================================
+
+Finding w_1
+
+====================================================================
+
+--------------------------------------------------------------------
+
+A previous w was determined at step 0, so we may skip this step for w_1
+
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+
+Performing step 1 for w_1
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0/s, f_1, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0/s, f_1, f_2/s) = f_0 + f_2 + s*(f_0 + f_1) + (2*f_0 + f_2)/s
+
+F_1(f_0/s, f_1, f_2/s) = f_0 + f_1*s + f_1 + f_2
+
+F_2(f_0/s, f_1, f_2/s) = f_0 + f_1*s + f_2 + (4*f_0 + 2*f_2)/s
+
+
+We are on step 1 for w_1. We therefore require that v(F_2(f_0/s, f_1, f_2/s)) = -1+k
+
+
+From above, the minimum possible valuation for F_2(f_0/s, f_1, f_2/s) is -1. Hence our initial k is 0
+
+
+Our system is thus:
+
+
+v(F_2(f_0/s, f_1, f_2/s)) >= -1
+
+v(F_2(f_0/s, f_1, f_2/s)) >= 0
+
+v(F_2(f_0/s, f_1, f_2/s)) = -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = 0
+
+....................................................................
+
+
+Choosing generic elements of appropriate degree, we have:
+
+
+f_0 = f_0_0
+
+f_1 = 0
+
+f_2 = f_2_0
+
+
+Note: If any of the polynomials are set to 0, then that means they are irrelevant in determining a solution set.
+
+
+This then gives us:
+
+
+F_0(f_0, f_1, f_2) = f_0_0*s + f_0_0 + f_2_0 + (2*f_0_0 + f_2_0)/s
+
+F_1(f_0, f_1, f_2) = f_0_0 + f_2_0
+
+F_2(f_0, f_1, f_2) = f_0_0 + f_2_0 + (4*f_0_0 + 2*f_2_0)/s
+
+
+Our reduced system is then described as follows:
+
+
+Degree -1:
+
+
+2*f_0_0 + f_2_0 = 0
+
+
+
+The solutions to our reduced system are given by:
+
+
+f_0_0 = -f_2_0/2
+
+f_1 = f_1
+
+f_2_0 = f_2_0
+
+
+Substituting into F_2 for this solution gives us:
+
+
+F_2(f_0/s, f_1, f_2/s) = f_2_0/2
+
+
+Which cannot have valuation -1 and thus is not valid.
+
+
+There are no valid solutions for this value of k, so we repeat this step with k = k+1.
+
+
+....................................................................
+
+Iteration 1 with k = 1
+
+....................................................................
+
+
+Choosing generic elements of appropriate degree, we have:
+
+
+f_0 = f_0_0 + f_0_1*s
+
+f_1 = f_1_0
+
+f_2 = f_2_0 + f_2_1*s
+
+
+Note: If any of the polynomials are set to 0, then that means they are irrelevant in determining a solution set.
+
+
+This then gives us:
+
+
+F_0(f_0, f_1, f_2) = f_0_0 + f_0_1*s**2 + 2*f_0_1 + f_2_0 + f_2_1 + s*(f_0_0 + f_0_1 + f_1_0 + f_2_1) + (2*f_0_0 + f_2_0)/s
+
+F_1(f_0, f_1, f_2) = f_0_0 + f_1_0 + f_2_0 + s*(f_0_1 + f_1_0 + f_2_1)
+
+F_2(f_0, f_1, f_2) = f_0_0 + 4*f_0_1 + f_2_0 + 2*f_2_1 + s*(f_0_1 + f_1_0 + f_2_1) + (4*f_0_0 + 2*f_2_0)/s
+
+
+Our reduced system is then described as follows:
+
+
+Degree -1:
+
+
+2*f_0_0 + f_2_0 = 0
+
+f_0_0 + f_1_0 + f_2_0 = 0
+
+
+Degree 0:
+
+
+f_0_0 + 2*f_0_1 + f_2_0 + f_2_1 = 0
+
+
+
+The solutions to our reduced system are given by:
+
+
+f_0_1 = -f_2_0/4 - f_2_1/2
+
+f_0_0 = -f_2_0/2
+
+f_1_0 = -f_2_0/2
+
+f_2_1 = f_2_1
+
+f_2_0 = f_2_0
+
+
+Substituting into F_2 for this solution gives us:
+
+
+F_2(f_0/s, f_1, f_2/s) = -f_2_0/2 + s*(-3*f_2_0/4 + f_2_1/2)
+
+
+Which can have valuation 0 and thus is valid.
+
+
+Accounting for cases in which the lowest term of F_2 is zero and adjusting according to our k value, our candidate(s) are described by the following:
+
+
+The vector w_1 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s**2) + p_0 + (-f_2_0/4 - f_2_1/2)/s
+
+x_1 = -f_2_0/(2*s) + p_1
+
+x_2 = f_2_0/s**2 + f_2_1/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+
+--------------------------------------------------------------------
+
+Performing step 2 for w_1
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0/s, f_1/s, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0/s, f_1/s, f_2/s) = f_0*s + f_0 + f_1 + f_2 + (2*f_0 + f_2)/s
+
+F_1(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_1/s + f_2
+
+F_2(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_2 + (4*f_0 + 2*f_2)/s
+
+
+We are on step 2 for w_1. We therefore require that v(F_2(f_0/s, f_1/s, f_2/s)) = -1+k
+
+
+From above, the minimum possible valuation for F_2(f_0/s, f_1/s, f_2/s) is -1. Hence our initial k is 0
+
+
+Our system is thus:
+
+
+v(F_2(f_0/s, f_1/s, f_2/s)) >= -1
+
+v(F_2(f_0/s, f_1/s, f_2/s)) >= -1
+
+v(F_2(f_0/s, f_1/s, f_2/s)) = -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = 0
+
+....................................................................
+
+
+Choosing generic elements of appropriate degree, we have:
+
+
+f_0 = f_0_0
+
+f_1 = f_1_0
+
+f_2 = f_2_0
+
+
+Note: If any of the polynomials are set to 0, then that means they are irrelevant in determining a solution set.
+
+
+This then gives us:
+
+
+F_0(f_0, f_1, f_2) = f_0_0*s + f_0_0 + f_1_0 + f_2_0 + (2*f_0_0 + f_2_0)/s
+
+F_1(f_0, f_1, f_2) = f_0_0 + f_1_0 + f_1_0/s + f_2_0
+
+F_2(f_0, f_1, f_2) = f_0_0 + f_1_0 + f_2_0 + (4*f_0_0 + 2*f_2_0)/s
+
+
+Our reduced system is then described as follows:
+
+
+Degree -1:
+
+
+2*f_0_0 + f_2_0 = 0
+
+f_1_0 = 0
+
+
+
+The solutions to our reduced system are given by:
+
+
+f_0_0 = -f_2_0/2
+
+f_1_0 = 0
+
+f_2_0 = f_2_0
+
+
+Substituting into F_2 for this solution gives us:
+
+
+F_2(f_0/s, f_1/s, f_2/s) = f_2_0/2
+
+
+Which cannot have valuation -1 and thus is not valid.
+
+
+There are no valid solutions for this value of k, so we repeat this step with k = k+1.
+
+
+....................................................................
+
+Iteration 1 with k = 1
+
+....................................................................
+
+
+k_2 is greater than or equal to the k value of 1, so we may skip this step.
+
+
+====================================================================
+
+Finding w_2
+
+====================================================================
+
+--------------------------------------------------------------------
+
+A previous w was determined at step 0, so we may skip this step for w_2
+
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+
+A previous w was determined at step 1, so we may skip this step for w_2
+
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+
+Performing step 2 for w_2
+
+--------------------------------------------------------------------
+
+Our input is of the form: (f_0/s, f_1/s, f_2/s)
+
+
+Our F's are then: 
+
+
+F_0(f_0/s, f_1/s, f_2/s) = f_0*s + f_0 + f_1 + f_2 + (2*f_0 + f_2)/s
+
+F_1(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_1/s + f_2
+
+F_2(f_0/s, f_1/s, f_2/s) = f_0 + f_1 + f_2 + (4*f_0 + 2*f_2)/s
+
+
+We are on step 2 for w_2. We therefore require that v(F_1(f_0/s, f_1/s, f_2/s)) = -1+k
+
+
+From above, the minimum possible valuation for F_1(f_0/s, f_1/s, f_2/s) is -1. Hence our initial k is 0
+
+
+Our system is thus:
+
+
+v(F_1(f_0/s, f_1/s, f_2/s)) >= -1
+
+v(F_1(f_0/s, f_1/s, f_2/s)) = -1
+
+v(F_1(f_0/s, f_1/s, f_2/s)) >= -1
+
+
+We now proceed with the algorithm.
+
+
+....................................................................
+
+Iteration 0 with k = 0
+
+....................................................................
+
+
+Choosing generic elements of appropriate degree, we have:
+
+
+f_0 = f_0_0
+
+f_1 = f_1_0
+
+f_2 = f_2_0
+
+
+Note: If any of the polynomials are set to 0, then that means they are irrelevant in determining a solution set.
+
+
+This then gives us:
+
+
+F_0(f_0, f_1, f_2) = f_0_0*s + f_0_0 + f_1_0 + f_2_0 + (2*f_0_0 + f_2_0)/s
+
+F_1(f_0, f_1, f_2) = f_0_0 + f_1_0 + f_1_0/s + f_2_0
+
+F_2(f_0, f_1, f_2) = f_0_0 + f_1_0 + f_2_0 + (4*f_0_0 + 2*f_2_0)/s
+
+
+Our reduced system is then described as follows:
+
+
+Degree -1:
+
+
+2*f_0_0 + f_2_0 = 0
+
+
+
+The solutions to our reduced system are given by:
+
+
+f_0_0 = -f_2_0/2
+
+f_1_0 = f_1_0
+
+f_2_0 = f_2_0
+
+
+Substituting into F_1 for this solution gives us:
+
+
+F_1(f_0/s, f_1/s, f_2/s) = f_1_0 + f_1_0/s + f_2_0/2
+
+
+Which can have valuation -1 and thus is valid.
+
+
+Accounting for cases in which the lowest term of F_1 is zero and adjusting according to our k value, our candidate(s) are described by the following:
+
+
+The vector w_2 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s) + p_0
+
+x_1 = f_1_0/s + p_1
+
+x_2 = f_2_0/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_1_0 != 0
+
+
+
+The vector w_0 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = p_0*s**N
+
+x_1 = p_1*s**N
+
+x_2 = f_2_0 + p_2*s
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+The vector w_1 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s**2) + p_0 + (-f_2_0/4 - f_2_1/2)/s
+
+x_1 = -f_2_0/(2*s) + p_1
+
+x_2 = f_2_0/s**2 + f_2_1/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_2_0 != 0
+
+
+The vector w_2 is determined as follows:
+
+
+System Solution 1:
+
+
+Solution:
+
+x_0 = -f_2_0/(2*s) + p_0
+
+x_1 = f_1_0/s + p_1
+
+x_2 = f_2_0/s + p_2
+
+
+Exclusions:
+
+Set 1:
+
+f_1_0 != 0
+
+
+
+The input chamber in this frame is:
+
+Base Point: [-1, 2, 1]
+
+Permutation (as list): [2, 0, 1]
+
+Coordinates: [[-1, 2, 1], [-1, 1, 1], [-1, 1, 0]]
+
+
+In [2]: 
+
